@@ -1,0 +1,20 @@
+<h3><%= @service.service_request %></h3>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Neighbourhood</th>
+      <th scope="col">Ward</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @service.requests.each do |request| %>
+        <tr>
+            <th scope="row"><%= request.date %></th>
+            <td><%= request.neighbourhood.name  %></td>
+            <td><%= request.neighbourhood.ward.name %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>

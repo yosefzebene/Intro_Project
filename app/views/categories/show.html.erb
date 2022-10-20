@@ -1,0 +1,20 @@
+<h3><%= @category.name %></h3>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Services</th>
+      <th scope="col">Number of requests</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @category.services.each do |service| %>
+        <tr>
+            <th scope="row"></th>
+            <td><%= link_to service.service_request, service %></td>
+            <td><%= service.requests.length %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
