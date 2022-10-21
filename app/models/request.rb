@@ -7,4 +7,5 @@ class Request < ApplicationRecord
   belongs_to :neighbourhood
 
   paginates_per 10
+
 end

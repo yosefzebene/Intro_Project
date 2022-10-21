@@ -1,6 +1,7 @@
 <% content_for (:html_title) {@service.service_request} %>
 
 <h3><%= @service.service_request %></h3>
+<p><%= link_to @service.category.name, @service.category %></p>
 
 <%= paginate @requests %>
 <table class="table table-striped">
@@ -14,7 +15,7 @@
   <tbody>
     <% @requests.each do |request| %>
         <tr>
-            <th scope="row"><%= request.date.strftime("%b %d, %Y") %></th>
+            <th scope="row"><%= link_to request.date.strftime("%b %d, %Y"), request %></th>
             <td><%= request.neighbourhood.name  %></td>
             <td><%= request.neighbourhood.ward.name %></td>
         </tr>

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  # get 'services', to: 'services#index'
-  # get 'categories', to: 'categories#index'
-  # get 'requests', to: 'requests#index'
   root "requests#index"
+
+  get 'about', to: 'about#index'
+  get 'search', to: 'requests#search'
   
   resources :categories
   resources :requests
