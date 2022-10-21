@@ -3,4 +3,6 @@ class Service < ApplicationRecord
 
   belongs_to :category
   has_many :requests
+
+  paginates_per 5
 end

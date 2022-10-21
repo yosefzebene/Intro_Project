@@ -1,10 +1,14 @@
-<div class="card" style="width: 18rem;">
+<% content_for (:html_title) {@request.service.service_request} %>
+
+<div class="card" style="width: 100%">
   <div class="card-body">
     <h5 class="card-title"><%= @request.service.service_request %></h5>
     <p class="card-text"><%= @request.service.category.name %></p>
-    <p class="card-text"><%= @request.date %></p>
+    <p class="card-text"><%= @request.date.strftime("%b %d, %Y") %></p>
+    <p class="card-text">Neighbourhood: <%= @request.neighbourhood.name %> </p>
+    <p class="card-text">Ward: <%= @request.neighbourhood.ward.name %> </p>
     <a href="http://maps.google.com/maps?z=12&t=m&q=loc:<%= @request.latitude %>+<%= @request.longitude %>" target="_blank" class="btn btn-primary">
-    <%= @request.neighbourhood.name %>, <%= @request.neighbourhood.ward.name %>
+      Go to map 
     </a>
   </div>
 </div>

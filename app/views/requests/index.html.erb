@@ -1,6 +1,7 @@
-<h3>311 Rquests</h3>
+<h3>Rquests</h3>
 
-<table class="table table-striped">
+<%= paginate @requests %>
+<table class="table table-striped table-hover">
   <thead>
     <tr>
       <th scope="col"></th>
@@ -13,8 +14,9 @@
         <tr>
             <th scope="row"></th>
             <td><%= link_to request.service.service_request, request %></td>
-            <td><%= request.date %></td>
+            <td><%= request.date.strftime("%b %d, %Y") %></td>
         </tr>
     <% end %>
   </tbody>
 </table>
+<%= paginate @requests %>

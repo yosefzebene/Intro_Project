@@ -1,9 +1,11 @@
 class ServicesController < ApplicationController
   def index
-    @services = Service.all
+    @services = Service.page(params[:page])
   end
 
   def show
-    @service = Service.includes(:requests).order("requests.date": :desc).find(params[:id])
+    @service = Service.includes(:requests).find(params[:id])
+
+    @requests = @service.requests.order(date: :desc).page(params[:page])
   end
 end
